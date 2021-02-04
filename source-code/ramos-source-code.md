@@ -1,5 +1,5 @@
 ```
-"Source-code do quarto episódio"
+"Source-code do quinto episódio"
 Full
 Lbl 0
 ClrHome:1→N:1→M
@@ -21,7 +21,6 @@ Output(6,14,"B: 11 ramos
 Output(7,14,"C: 12 ramos
 Output(8,14,"D:Conf. graph
 Output(9,14,"E:Informaçöes
-Output(10,24,"[1]
 Goto M0
 Stop
 Lbl M0
@@ -125,11 +124,11 @@ Goto M0
 End
 If (K=105 and M=1) or K=74:Then:8→P:Goto 00:End
 If (K=105 and M=2) or K=102:Then:9→P:Goto 00:End
-If (K=105 and M=1) or K=41:Then:10→P:Goto 00:End
-If (K=105 and M=1) or K=42:Then:11→N:Goto 00:End
-If (K=105 and M=1) or K=43:Then:12→N:Goto 00:End
-If (K=105 and M=1) or K=51:Goto C
-If (K=105 and M=1) or K=52:Goto I
+If (K=105 and M=3) or K=41:Then:10→P:Goto 00:End
+If (K=105 and M=4) or K=42:Then:11→P:Goto 00:End
+If (K=105 and M=5) or K=43:Then:12→P:Goto 00:End
+If (K=105 and M=6) or K=51:Goto C
+If (K=105 and M=7) or K=52:Goto I
 If K=92:Then:1→P:Goto 00:End
 If K=93:Then:2→P:Goto 00:End
 If K=94:Then:3→P:Goto 00:End
@@ -148,15 +147,51 @@ Lbl C
 Stop
 Lbl I
 "Info"
-Stop
 ClrHome
-Input "1° ramo=",Str1
-Input "1° condiçäo=",Str2
-Input "2° ramo=",Str3
-Input "2° condiçäo=",Str4
-StringEqu(Str1,X₁):StringEqu(Str2,Y₁):StringEqu(Str3,X₂):StringEqu(Str4,Y₂)
-"piecewise(X₁,Y₁,X₂,Y₂)"→Y₁
-DispGraph
+Output(1,9,"Informaçöes
+Output(2,1,"==========================
+Output(3,1,"-RAMOS criado por CP
+Output(4,1,"Software Company
+Output(5,1,"-Programador Jorge C. P.
+Output(6,1,"1:Voltar
+Output(7,1,"2:Sair
+Output(8,1,"3:Pág. seg.
+Output(9,9,"Versäo 1.0
+Output(10,5,"CP Software Company"):Output(10,26,"1
+Goto M2
+Stop
+Lbl M2
+Repeat K≠0
+getKey→K
+End
+If K=92 or K=23:Goto 0
+If K=93 or K=45:Goto 08
+If K=94 or K=26:Goto I0
+Goto M2
+Stop
+Lbl I0
+ClrHome
+Output(1,9,"Informaçöes
+Output(2,1,"==========================
+Output(3,1,"site:cpsoftwarecompany.epi
+Output(4,1,"zy.com
+Output(5,1,"Ig:@cpsoft.com.pany
+Output(6,1,"Tw:@software_cp
+Output(7,1,"GH:/CPSoftwareC
+Output(8,1,"1:Voltar
+Output(9,1,"2:Sair
+Output(10,1,"3:Pág. ant.
+Output(10,26,"2
+Goto M3
+Stop
+Lbl M3
+Repeat K≠0
+getKey→K
+End
+If K=92 or K=23:Goto 0
+If K=93 or K=45:Goto 08
+If K=84 or K=24:Goto I
+Goto M3
 Stop
 Lbl 00
 StoreGDB 0
@@ -179,19 +214,72 @@ If P=11:Goto 11
 If P=12:Goto 12
 Stop
 Lbl 1
-Disp "lbl 1"
+ClrHome
+Input "1° ramo=",Str1
+Input "1° condiçäo=",Str2
+StringEqu(Str1,X₁):StringEqu(Str2,Y₁)
+"piecewise(X₁,Y₁)"→Y₁
+DispGraph
+Pause 
+Output(3,8,"CP Software")
 Stop
 Lbl 2
-Disp "lbl 2"
+ClrHome
+Input "1° ramo=",Str1
+Input "1° condiçäo=",Str2
+Input "2° ramo=",Str3
+Input "2° condiçäo=",Str4
+StringEqu(Str1,X₁):StringEqu(Str2,Y₁):StringEqu(Str3,X₂):StringEqu(Str4,Y₂)
+"piecewise(X₁,Y₁,X₂,Y₂)"→Y₁
+DispGraph
+Pause 
+Output(5,8,"CP Software")
 Stop
 Lbl 3
-Disp "lbl 3"
+ClrHome
+Input "1° ramo=",Str1
+Input "1° condiçäo=",Str2
+Input "2° ramo=",Str3
+Input "2° condiçäo=",Str4
+Input "3° ramo=",Str5
+Input "3° condiçäo=",Str6
+StringEqu(Str1,X₁):StringEqu(Str2,Y₁):StringEqu(Str3,X₂):StringEqu(Str4,Y₂):StringEqu(Str5,X₃):StringEqu(Str6,Y₃)
+"piecewise(X₁,Y₁,X₂,Y₂,X₃,Y₃)"→Y₁
+DispGraph
+Pause 
+Output(7,8,"CP Software
 Stop
 Lbl 4
-Disp "lbl 4"
+ClrHome
+Input "1° ramo=",Str1
+Input "1° condiçäo=",Str2
+Input "2° ramo=",Str3
+Input "2° condiçäo=",Str4
+Input "3° ramo=",Str5
+Input "3° condiçäo=",Str6
+Input "4° ramo=",Str7
+Input "4° condiçäo=",Str8
+StringEqu(Str1,X₁):StringEqu(Str2,Y₁):StringEqu(Str3,X₂):StringEqu(Str4,Y₂):StringEqu(Str5,X₃):StringEqu(Str6,Y₃):StringEqu(Str7,X₄):StringEqu(Str8,Y₄)
+"piecewise(X₁,Y₁,X₂,Y₂,X₃,Y₃,X₄,Y₄)"→Y₁
+DispGraph
+Pause 
+Output(9,8,"CP Software
 Stop
 Lbl 5
-Disp "lbl 5"
+ClrHome
+Input "1° ramo=",Str1
+Input "1° condiçäo=",Str2
+Input "2° ramo=",Str3
+Input "2° condiçäo=",Str4
+Input "3° ramo=",Str5
+Input "3° condiçäo=",Str6
+Input "4° ramo=",Str7
+Input "4° condiçäo=",Str8
+Input "5° ramo=",Str9
+Input "5° condiçäo=",Str0
+StringEqu(Str1,X₁):StringEqu(Str2,Y₁):StringEqu(Str3,X₂):StringEqu(Str4,Y₂):StringEqu(Str5,X₃):StringEqu(Str6,Y₃):StringEqu(Str7,X₄):StringEqu(Str8,Y₄):StringEqu(Str9,X₅):StringEqu(Str0,Y₅)
+"piecewise(X₁,Y₁,X₂,Y₂,X₃,Y₃,X₄,Y₄,X₅,Y₅)"→Y₁
+DispGraph
 Stop
 Lbl 6
 Disp "lbl 6"
